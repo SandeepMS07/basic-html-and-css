@@ -13,8 +13,12 @@ myImg.onclick = function() {
 
 function setUserName(){
     let myName = prompt('Please enter your name. ');
+    if(!myName){
+        setUserName();
+    }else{
     localStorage.setItem('name', myName);
     myHeading.textContent = 'Mozilla is cool,  ' + myName;
+    }
 }
 
 if(!localStorage.getItem('name')) {
